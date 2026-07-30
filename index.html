@@ -187,13 +187,11 @@ table.horarios tr:hover td{background:rgba(255,106,0,.06);}
 
 /* PACOTES / PRECOS */
 .pacotes{background:var(--bg2);}
-.pacotes-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:2.5rem;align-items:start;margin-top:3rem;}
-@media(max-width:960px){.pacotes-grid{grid-template-columns:1fr;}}
-.pacotes-flyers{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
+.pacotes-grid{display:flex;flex-direction:column;gap:2.5rem;margin-top:3rem;}
+.flyer-card-pacotes{max-width:520px;width:100%;margin:0 auto;}
+.pacotes-flyers{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;max-width:900px;width:100%;margin:0 auto;}
 @media(max-width:640px){.pacotes-flyers{grid-template-columns:1fr;}}
 .pacotes-flyers .flyer-card{max-width:none;}
-.flyer-card-pacotes{max-width:none;position:sticky;top:100px;}
-@media(max-width:960px){.flyer-card-pacotes{position:static;max-width:340px;margin:0 auto;}}
 .price-table-wrap{margin-top:3rem;overflow-x:auto;border:1px solid var(--line);border-radius:14px;}
 table.precos{width:100%;border-collapse:collapse;min-width:640px;}
 table.precos th{font-family:'Anton';text-transform:uppercase;font-size:1rem;letter-spacing:.03em;padding:1.1rem 1.4rem;text-align:left;background:rgba(255,106,0,.1);}
@@ -429,6 +427,9 @@ footer{padding:3rem 6vw;text-align:center;color:var(--muted);font-size:.85rem;bo
     <h2 class="display">Conheça nossos<br>pacotes.</h2>
   </div>
   <div class="pacotes-grid">
+    <div class="flyer-card flyer-card-pacotes reveal" data-expand data-expand-title="Conheça nossos pacotes" data-expand-body="Pague em dias e receba o desconto promocional. Consulte as aulas extras que você tem direito de fazer." data-expand-img="flyer-pacotes.jpg">
+      <img decoding="async" src="flyer-pacotes.jpg" alt="Flyer com a tabela completa de pacotes e preços da Metaforma" loading="lazy">
+    </div>
     <div class="pacotes-flyers">
       <div class="flyer-card reveal" data-expand data-expand-title="Pacote Funcional 6hs" data-expand-body="Segunda a sábado, sempre às 6h — funcional, HIIT, circuito, aula surpresa e crosstraining. Escolha seu dia, supere seus limites." data-expand-img="flyer-pacote-funcional-6hs.jpg">
         <img decoding="async" src="flyer-pacote-funcional-6hs.jpg" alt="Flyer do Pacote Funcional 6hs da Metaforma" loading="lazy">
@@ -436,9 +437,6 @@ footer{padding:3rem 6vw;text-align:center;color:var(--muted);font-size:.85rem;bo
       <div class="flyer-card reveal" data-expand data-expand-title="Pacote Funcional 18hs" data-expand-body="Segunda a sábado, sempre às 18h — dança, jump, HIIT e musculação, por R$110 mensal. Seja sua melhor versão!" data-expand-img="flyer-pacote-funcional-18hs.jpg">
         <img decoding="async" src="flyer-pacote-funcional-18hs.jpg" alt="Flyer do Pacote Funcional 18hs da Metaforma" loading="lazy">
       </div>
-    </div>
-    <div class="flyer-card flyer-card-pacotes reveal" data-expand data-expand-title="Conheça nossos pacotes" data-expand-body="Pague em dias e receba o desconto promocional. Consulte as aulas extras que você tem direito de fazer." data-expand-img="flyer-pacotes.jpg">
-      <img decoding="async" src="flyer-pacotes.jpg" alt="Flyer com a tabela completa de pacotes e preços da Metaforma" loading="lazy">
     </div>
   </div>
 </section>
