@@ -189,6 +189,9 @@ table.horarios tr:hover td{background:rgba(255,106,0,.06);}
 .pacotes{background:var(--bg2);}
 .pacotes-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:2.5rem;align-items:start;margin-top:3rem;}
 @media(max-width:960px){.pacotes-grid{grid-template-columns:1fr;}}
+.pacotes-flyers{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
+@media(max-width:640px){.pacotes-flyers{grid-template-columns:1fr;}}
+.pacotes-flyers .flyer-card{max-width:none;}
 .flyer-card-pacotes{max-width:none;position:sticky;top:100px;}
 @media(max-width:960px){.flyer-card-pacotes{position:static;max-width:340px;margin:0 auto;}}
 .price-table-wrap{margin-top:3rem;overflow-x:auto;border:1px solid var(--line);border-radius:14px;}
@@ -426,27 +429,12 @@ footer{padding:3rem 6vw;text-align:center;color:var(--muted);font-size:.85rem;bo
     <h2 class="display">Conheça nossos<br>pacotes.</h2>
   </div>
   <div class="pacotes-grid">
-    <div>
-      <div class="price-table-wrap reveal">
-        <table class="precos">
-          <thead><tr><th>Plano</th><th class="promo">Promocional</th><th class="integral">Integral*</th></tr></thead>
-          <tbody>
-            <tr><td>Musculação sem aula extra</td><td class="price">R$ 100</td><td class="price integral">R$ 118</td></tr>
-            <tr><td>Musculação com aula extra</td><td class="price">R$ 110</td><td class="price integral">R$ 128</td></tr>
-            <tr><td>Treinamento Funcional</td><td class="price">R$ 110</td><td class="price integral">R$ 128</td></tr>
-            <tr><td>Muaythai com aula extra <span style="color:var(--muted);font-size:.82rem;">(sem aula extra R$110/R$128)</span></td><td class="price">R$ 120</td><td class="price integral">R$ 138</td></tr>
-            <tr><td>Musculação + T. Funcional (misto)</td><td class="price">R$ 130</td><td class="price integral">R$ 148</td></tr>
-            <tr><td>Musculação + Muaythai</td><td class="price">R$ 150</td><td class="price integral">R$ 168</td></tr>
-          </tbody>
-        </table>
+    <div class="pacotes-flyers">
+      <div class="flyer-card reveal" data-expand data-expand-title="Pacote Funcional 6hs" data-expand-body="Segunda a sábado, sempre às 6h — funcional, HIIT, circuito, aula surpresa e crosstraining. Escolha seu dia, supere seus limites." data-expand-img="flyer-pacote-funcional-6hs.jpg">
+        <img decoding="async" src="flyer-pacote-funcional-6hs.jpg" alt="Flyer do Pacote Funcional 6hs da Metaforma" loading="lazy">
       </div>
-      <p class="precos-note reveal">*Integral: pagamento após 3 dias de atraso. Consulte as aulas extras que você tem direito de fazer.</p>
-      <div class="destaque-pacote reveal">
-        <div class="big-price">R$ 110<small>/mês</small></div>
-        <div>
-          <h3 class="display" style="font-size:1.3rem;">Pacote Funcional 6hs</h3>
-          <p style="color:var(--muted);font-size:.9rem;">Segunda a sábado, sempre às 6h — funcional, HIIT, circuito, dança e crosstraining. Escolha seu dia, supere seus limites.</p>
-        </div>
+      <div class="flyer-card reveal" data-expand data-expand-title="Pacote Funcional 18hs" data-expand-body="Segunda a sábado, sempre às 18h — dança, jump, HIIT e musculação, por R$110 mensal. Seja sua melhor versão!" data-expand-img="flyer-pacote-funcional-18hs.jpg">
+        <img decoding="async" src="flyer-pacote-funcional-18hs.jpg" alt="Flyer do Pacote Funcional 18hs da Metaforma" loading="lazy">
       </div>
     </div>
     <div class="flyer-card flyer-card-pacotes reveal" data-expand data-expand-title="Conheça nossos pacotes" data-expand-body="Pague em dias e receba o desconto promocional. Consulte as aulas extras que você tem direito de fazer." data-expand-img="flyer-pacotes.jpg">
