@@ -17,7 +17,7 @@
   "@type": "ExerciseGym",
   "name": "Studio Metaforma - Funcional e Musculação",
   "description": "Academia de treinamento funcional, musculação, muaythai e aulas coletivas.",
-  "sameAs": ["https://instagram.com/fnanda.personal"],
+  "sameAs": ["https://www.instagram.com/fnanda.personal/"],
   "telephone": "+55 73 99173-9604",
   "address": {
     "@type": "PostalAddress",
@@ -29,10 +29,10 @@
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": -14.789278,
-    "longitude": -39.2833633
+    "latitude": -14.7892446,
+    "longitude": -39.2832876
   },
-  "hasMap": "https://maps.app.goo.gl/6qjo5XVedSQTK3eN9",
+  "hasMap": "https://www.google.com/maps/place/Metaforma+Funcional+%26+Muscula%C3%A7%C3%A3o/@-14.7892394,-39.2858625,17z/data=!3m1!4b1!4m6!3m5!1s0x739abc4c2605717:0x17cde035f4dd2f2d!8m2!3d-14.7892446!4d-39.2832876!16s%2Fg%2F11q91kr6mc",
   "url": "https://sitepersonalizado.github.io/metaforma/"
 }
 </script>
@@ -181,9 +181,16 @@ table.horarios tr:hover td{background:rgba(255,106,0,.06);}
 .equipe-card .pc-label{position:absolute;left:0;right:0;bottom:0;padding:1rem;background:linear-gradient(0deg,rgba(0,0,0,.9),transparent);}
 .equipe-card .pc-label h3{font-family:'Anton';font-size:1rem;text-transform:uppercase;}
 .equipe-card .pc-label p{font-size:.74rem;color:var(--orange2);margin-top:.1rem;}
+.flyer-card{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);cursor:pointer;max-width:280px;box-shadow:0 16px 40px rgba(0,0,0,.4);}
+.flyer-card img{width:100%;display:block;transition:transform .6s cubic-bezier(.16,1,.3,1);}
+.flyer-card:hover img{transform:scale(1.04);}
 
 /* PACOTES / PRECOS */
 .pacotes{background:var(--bg2);}
+.pacotes-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:2.5rem;align-items:start;margin-top:3rem;}
+@media(max-width:960px){.pacotes-grid{grid-template-columns:1fr;}}
+.flyer-card-pacotes{max-width:none;position:sticky;top:100px;}
+@media(max-width:960px){.flyer-card-pacotes{position:static;max-width:340px;margin:0 auto;}}
 .price-table-wrap{margin-top:3rem;overflow-x:auto;border:1px solid var(--line);border-radius:14px;}
 table.precos{width:100%;border-collapse:collapse;min-width:640px;}
 table.precos th{font-family:'Anton';text-transform:uppercase;font-size:1rem;letter-spacing:.03em;padding:1.1rem 1.4rem;text-align:left;background:rgba(255,106,0,.1);}
@@ -267,7 +274,7 @@ footer{padding:3rem 6vw;text-align:center;color:var(--muted);font-size:.85rem;bo
 <div class="motif" id="motif"><svg viewBox="0 0 24 24"><path d="M2 9h2v6H2zM4 10h1v4H4zM20 9h2v6h-2zM19 10h1v4h-1zM7 11h10v2H7z"/></svg></div>
 
 <header id="header">
-  <div class="logo"><img decoding="async" src="logo-metaforma.png" alt="Logo Metaforma"> META<span>FORMA</span></div>
+  <div class="logo"><img decoding="async" src="logo-metaforma.png" alt="Logo Metaforma"><span class="logo-text">META<span>FORMA</span></span></div>
   <nav>
     <a href="#sobre">Sobre</a>
     <a href="#galeria">Treinos</a>
@@ -328,13 +335,13 @@ footer{padding:3rem 6vw;text-align:center;color:var(--muted);font-size:.85rem;bo
     <h2 class="display">Um ambiente feito<br>para transformar você.</h2>
   </div>
   <div class="amb-grid">
-    <div class="amb-photo big reveal" data-expand data-expand-title="Equipamentos modernos" data-expand-body="Tecnologia e qualidade para potencializar seus treinos — estações completas de musculação, com identidade visual própria em laranja e preto." data-expand-img="interior-equipamentos.jpg">
-      <img decoding="async" src="interior-equipamentos.jpg" alt="Área de musculação da Metaforma com equipamentos modernos" loading="lazy">
+    <div class="amb-photo big reveal" data-expand data-expand-title="Musculação" data-expand-body="Tecnologia e qualidade para potencializar seus treinos — estações completas de musculação, com identidade visual própria em laranja e preto." data-expand-img="interior-musculacao.jpg">
+      <img decoding="async" src="interior-musculacao.jpg" alt="Área de musculação da Metaforma com equipamentos modernos" loading="lazy">
       <div class="pc-label"><h3>Musculação</h3></div>
     </div>
-    <div class="amb-photo small reveal" data-expand data-expand-title="Espaço amplo" data-expand-body="Ambiente amplo e confortável, com piso emborrachado e estrutura pensada para treinos funcionais e coletivos." data-expand-img="interior-ambiente.jpg">
-      <img decoding="async" src="interior-ambiente.jpg" alt="Vista ampla do interior da Metaforma" loading="lazy">
-      <div class="pc-label"><h3>Espaço Funcional</h3></div>
+    <div class="amb-photo small reveal" data-expand data-expand-title="Funcional" data-expand-body="Espaço dedicado ao treinamento funcional — cordas navais, plataformas, kettlebells e muito mais para treinos dinâmicos em grupo." data-expand-img="interior-funcional.jpg">
+      <img decoding="async" src="interior-funcional.jpg" alt="Área de treinamento funcional da Metaforma" loading="lazy">
+      <div class="pc-label"><h3>Funcional</h3></div>
     </div>
   </div>
 </section>
@@ -382,13 +389,16 @@ footer{padding:3rem 6vw;text-align:center;color:var(--muted);font-size:.85rem;bo
           <tr><td>Segunda</td><td>Dança <span class="badge-prof">Prof. Chileno</span></td><td>18h</td></tr>
           <tr><td>Terça</td><td>HIIT</td><td>6h</td></tr>
           <tr><td>Terça</td><td>Jump <span class="badge-prof">Prof. Felipe</span></td><td>17h</td></tr>
-          <tr><td>Quarta</td><td>HIIT</td><td>18h</td></tr>
+          <tr><td>Quarta</td><td>HIIT <span class="badge-prof">Prof. Fernando Pinheiro</span></td><td>18h</td></tr>
           <tr><td>Quinta</td><td>Dança <span class="badge-prof">Prof. Chileno</span></td><td>6h</td></tr>
           <tr><td>Quinta</td><td>Jump <span class="badge-prof">Fernanda Pinheiro</span></td><td>18h</td></tr>
           <tr><td>Sábado</td><td>Circuitão Funcional <span class="badge-prof">Prof. Silvana</span></td><td>6h</td></tr>
         </tbody>
       </table>
       <p style="margin-top:1.4rem;color:var(--muted);font-size:.9rem;">Consulte também o <b style="color:var(--ink)">Pacote Funcional 6hs</b>: Segunda (Funcional), Terça (HIIT), Quarta (Circuito), Quinta (Dança), Sexta (Crosstraining) e Sábado (Circuito) — todos às 6h.</p>
+      <div class="flyer-card reveal" data-expand data-expand-title="Olha nossas aulas extras" data-expand-body="Segunda Dança 18h · Terça Jump 17h · Quarta HIIT 18h · Quinta Dança 6h · Quinta Jump 18h · Sábado Circuito Funcional 6h — tudo isso no pacote que cabe no seu bolso." data-expand-img="flyer-aulas-extras.jpg" style="margin-top:1.6rem;">
+        <img decoding="async" src="flyer-aulas-extras.jpg" alt="Flyer com o horário completo das aulas extras da Metaforma" loading="lazy">
+      </div>
     </div>
     <div class="equipe-grid">
       <div class="equipe-card reveal" data-expand data-expand-title="Prof. Chileno" data-expand-body="Comanda a aula de Dança nas segundas às 18h e quintas às 6h. Energia, ritmo e movimento em cada aula." data-expand-img="prof-chileno-danca.jpg">
@@ -416,25 +426,32 @@ footer{padding:3rem 6vw;text-align:center;color:var(--muted);font-size:.85rem;bo
     <div class="kicker">Pacotes</div>
     <h2 class="display">Conheça nossos<br>pacotes.</h2>
   </div>
-  <div class="price-table-wrap reveal">
-    <table class="precos">
-      <thead><tr><th>Plano</th><th class="promo">Promocional</th><th class="integral">Integral*</th></tr></thead>
-      <tbody>
-        <tr><td>Musculação sem aula extra</td><td class="price">R$ 100</td><td class="price integral">R$ 118</td></tr>
-        <tr><td>Musculação com aula extra</td><td class="price">R$ 110</td><td class="price integral">R$ 128</td></tr>
-        <tr><td>Treinamento Funcional</td><td class="price">R$ 110</td><td class="price integral">R$ 128</td></tr>
-        <tr><td>Muaythai com aula extra <span style="color:var(--muted);font-size:.82rem;">(sem aula extra R$110/R$128)</span></td><td class="price">R$ 120</td><td class="price integral">R$ 138</td></tr>
-        <tr><td>Musculação + T. Funcional (misto)</td><td class="price">R$ 130</td><td class="price integral">R$ 148</td></tr>
-        <tr><td>Musculação + Muaythai</td><td class="price">R$ 150</td><td class="price integral">R$ 168</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="precos-note reveal">*Integral: pagamento após 3 dias de atraso. Consulte as aulas extras que você tem direito de fazer.</p>
-  <div class="destaque-pacote reveal">
-    <div class="big-price">R$ 110<small>/mês</small></div>
+  <div class="pacotes-grid">
     <div>
-      <h3 class="display" style="font-size:1.3rem;">Pacote Funcional 6hs</h3>
-      <p style="color:var(--muted);font-size:.9rem;">Segunda a sábado, sempre às 6h — funcional, HIIT, circuito, dança e crosstraining. Escolha seu dia, supere seus limites.</p>
+      <div class="price-table-wrap reveal">
+        <table class="precos">
+          <thead><tr><th>Plano</th><th class="promo">Promocional</th><th class="integral">Integral*</th></tr></thead>
+          <tbody>
+            <tr><td>Musculação sem aula extra</td><td class="price">R$ 100</td><td class="price integral">R$ 118</td></tr>
+            <tr><td>Musculação com aula extra</td><td class="price">R$ 110</td><td class="price integral">R$ 128</td></tr>
+            <tr><td>Treinamento Funcional</td><td class="price">R$ 110</td><td class="price integral">R$ 128</td></tr>
+            <tr><td>Muaythai com aula extra <span style="color:var(--muted);font-size:.82rem;">(sem aula extra R$110/R$128)</span></td><td class="price">R$ 120</td><td class="price integral">R$ 138</td></tr>
+            <tr><td>Musculação + T. Funcional (misto)</td><td class="price">R$ 130</td><td class="price integral">R$ 148</td></tr>
+            <tr><td>Musculação + Muaythai</td><td class="price">R$ 150</td><td class="price integral">R$ 168</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="precos-note reveal">*Integral: pagamento após 3 dias de atraso. Consulte as aulas extras que você tem direito de fazer.</p>
+      <div class="destaque-pacote reveal">
+        <div class="big-price">R$ 110<small>/mês</small></div>
+        <div>
+          <h3 class="display" style="font-size:1.3rem;">Pacote Funcional 6hs</h3>
+          <p style="color:var(--muted);font-size:.9rem;">Segunda a sábado, sempre às 6h — funcional, HIIT, circuito, dança e crosstraining. Escolha seu dia, supere seus limites.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flyer-card flyer-card-pacotes reveal" data-expand data-expand-title="Conheça nossos pacotes" data-expand-body="Pague em dias e receba o desconto promocional. Consulte as aulas extras que você tem direito de fazer." data-expand-img="flyer-pacotes.jpg">
+      <img decoding="async" src="flyer-pacotes.jpg" alt="Flyer com a tabela completa de pacotes e preços da Metaforma" loading="lazy">
     </div>
   </div>
 </section>
@@ -465,11 +482,11 @@ footer{padding:3rem 6vw;text-align:center;color:var(--muted);font-size:.85rem;bo
     <div class="local-info">
       <p><b>Endereço:</b> Rua Primeiro de Dezembro, nº236 — Bairro Santo Antônio, Itabuna - BA, CEP 45602-031</p>
       <p><b>WhatsApp:</b> <a href="https://wa.me/5573991739604" target="_blank">(73) 99173-9604</a></p>
-      <p><b>Instagram:</b> <a href="https://instagram.com/fnanda.personal" target="_blank">@fnanda.personal</a></p>
-      <a class="btn btn-outline magnet" style="margin-top:1.4rem;display:inline-flex;" href="https://maps.app.goo.gl/6qjo5XVedSQTK3eN9?g_st=awb" target="_blank">Ver no mapa</a>
+      <p><b>Instagram:</b> <a href="https://www.instagram.com/fnanda.personal/" target="_blank">@fnanda.personal</a></p>
+      <a class="btn btn-outline magnet" style="margin-top:1.4rem;display:inline-flex;" href="https://www.google.com/maps/place/Metaforma+Funcional+%26+Muscula%C3%A7%C3%A3o/@-14.7892394,-39.2858625,17z/data=!3m1!4b1!4m6!3m5!1s0x739abc4c2605717:0x17cde035f4dd2f2d!8m2!3d-14.7892446!4d-39.2832876!16s%2Fg%2F11q91kr6mc?hl=pt-BR" target="_blank">Ver no mapa</a>
     </div>
     <div class="local-map">
-      <iframe src="https://www.google.com/maps?q=-14.789278,-39.2833633&z=17&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização Studio Metaforma no Google Maps"></iframe>
+      <iframe src="https://www.google.com/maps?q=-14.7892446,-39.2832876&z=17&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização Studio Metaforma no Google Maps"></iframe>
     </div>
   </div>
 </section>
