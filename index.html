@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Metaforma | Funcional &amp; Musculação</title>
+<meta name="description" content="Studio Metaforma — treinamento funcional, musculação, muaythai e aulas coletivas. Transformo disciplina em resultados.">
+<link rel="canonical" href="https://sitepersonalizado.github.io/metaforma/">
+<meta property="og:title" content="Studio Metaforma — Funcional &amp; Musculação">
+<meta property="og:description" content="Aqui é mais que treino. É transformação.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ExerciseGym",
+  "name": "Studio Metaforma - Funcional e Musculação",
+  "description": "Academia de treinamento funcional, musculação, muaythai e aulas coletivas.",
+  "sameAs": ["https://instagram.com/studio.metaforma"],
+  "url": "https://sitepersonalizado.github.io/metaforma/"
+}
+</script>
+<style>
+:root{
+  --bg:#0c0a08; --bg2:#171310; --orange:#ff6a00; --orange2:#ffb347;
+  --ink:#fbf3ea; --muted:#b8a99a; --line:rgba(255,255,255,.09);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;overflow-x:hidden;cursor:none;}
+.display{font-family:'Anton',sans-serif;letter-spacing:.01em;text-transform:uppercase;}
+::selection{background:var(--orange);color:#000;}
+
+#preloader{position:fixed;inset:0;background:#000;z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s;}
+#preloader.done{opacity:0;visibility:hidden;}
+#preloader .pl-text{font-family:'Anton';font-size:clamp(2.2rem,7vw,4.2rem);color:var(--orange);letter-spacing:.04em;opacity:0;animation:plIn 1s ease forwards .2s;}
+@keyframes plIn{to{opacity:1;}}
+#preloader .bar{position:absolute;bottom:36%;left:50%;transform:translateX(-50%);width:160px;height:3px;background:var(--line);overflow:hidden;}
+#preloader .bar span{display:block;height:100%;width:0;background:var(--orange);animation:plBar 1.4s ease forwards;}
+@keyframes plBar{to{width:100%;}}
+
+#cdot,#cring{position:fixed;top:0;left:0;pointer-events:none;z-index:9998;border-radius:50%;transform:translate(-50%,-50%);}
+#cdot{width:6px;height:6px;background:var(--orange);}
+#cring{width:34px;height:34px;border:1px solid rgba(255,106,0,.5);transition:width .2s,height .2s,border-color .2s;}
+@media(max-width:860px){#cdot,#cring{display:none;} body{cursor:auto;}}
+
+.motif{position:fixed;top:0;left:0;width:100px;height:100px;pointer-events:none;z-index:5;opacity:.15;transition:transform 1s cubic-bezier(.16,1,.3,1);}
+.motif svg{width:100%;height:100%;fill:var(--orange);}
+
+header{position:fixed;top:0;left:0;width:100%;z-index:100;padding:20px 6vw;display:flex;justify-content:space-between;align-items:center;transition:background .3s,padding .3s;}
+header.scrolled{background:rgba(12,10,8,.92);backdrop-filter:blur(10px);padding:13px 6vw;border-bottom:1px solid var(--line);}
+.logo{display:flex;align-items:center;gap:.6rem;font-family:'Anton';font-size:1.35rem;letter-spacing:.02em;}
+.logo img{height:34px;width:34px;object-fit:contain;border-radius:50%;}
+.logo span{color:var(--orange);}
+nav a{color:var(--ink);text-decoration:none;margin-left:1.8rem;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;opacity:.82;}
+nav a:hover{opacity:1;color:var(--orange);}
+.nav-cta{display:none;}
+@media(max-width:900px){nav a:not(.nav-cta){display:none;} .nav-cta{display:inline-block;background:var(--orange);color:#1a0e00;padding:.5rem 1rem;border-radius:100px;font-size:.72rem;font-weight:800;}}
+
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 6vw 4.5rem;overflow:hidden;}
+.hero-video-wrap{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.hero-video-wrap video{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%) scale(1.14);object-fit:cover;filter:brightness(.42) saturate(1.1) blur(7px);transition:transform 2s cubic-bezier(.16,1,.3,1), filter 2s ease;}
+.hero.arrived .hero-video-wrap video{filter:brightness(.72) saturate(1.1) blur(0);transform:translate(-50%,-50%) scale(1);}
+.hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(12,10,8,.2) 0%,rgba(12,10,8,.55) 45%,rgba(12,10,8,.96) 92%),linear-gradient(90deg,rgba(12,10,8,.7),transparent 55%);}
+.cloud-veil{position:absolute;inset:-15% -15%;z-index:6;pointer-events:none;
+  background:
+    radial-gradient(ellipse at 18% 25%, rgba(12,10,8,.97), transparent 55%),
+    radial-gradient(ellipse at 76% 15%, rgba(23,19,16,.95), transparent 50%),
+    radial-gradient(ellipse at 46% 60%, rgba(12,10,8,.97), transparent 58%),
+    radial-gradient(ellipse at 86% 72%, rgba(23,19,16,.93), transparent 55%);
+  opacity:1; transform:scale(1.3) translateY(-4%); filter:blur(0px);
+  transition:opacity 1.7s cubic-bezier(.16,1,.3,1), transform 1.9s cubic-bezier(.16,1,.3,1), filter 1.7s ease;
+}
+.cloud-veil.lift{opacity:0; transform:scale(1.6) translateY(-16%); filter:blur(34px);}
+.particle-canvas{position:absolute;inset:0;z-index:2;pointer-events:none;filter:drop-shadow(0 0 6px rgba(255,106,0,.4));}
+.light-rays{position:absolute;inset:-30% -20%;z-index:2;pointer-events:none;mix-blend-mode:screen;opacity:.55;
+  background:conic-gradient(from 0deg at 75% 25%, transparent 0deg, rgba(255,106,0,.16) 6deg, transparent 16deg, transparent 210deg, rgba(255,179,71,.1) 222deg, transparent 236deg, transparent 360deg);
+  animation:rayspin 42s linear infinite;}
+@keyframes rayspin{to{transform:rotate(360deg);}}
+.hero-tag{font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;color:var(--orange);margin-bottom:1.1rem;position:relative;z-index:3;}
+.hero h1{font-size:clamp(2.6rem,8.6vw,6.8rem);line-height:.94;position:relative;z-index:3;}
+.hero h1 .line{display:block;overflow:hidden;}
+.hero h1 .line span{display:inline-block;transform:translateY(110%);animation:riseUp .9s cubic-bezier(.16,1,.3,1) forwards;}
+.hero h1 .line:nth-child(2) span{animation-delay:.12s;color:var(--orange);}
+@keyframes riseUp{to{transform:translateY(0);}}
+.hero-sub{max-width:520px;margin-top:1.4rem;color:var(--muted);font-size:1.02rem;position:relative;z-index:3;}
+.hero-ctas{display:flex;gap:1rem;margin-top:2.2rem;position:relative;z-index:3;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:1rem 1.8rem;border-radius:6px;font-weight:800;font-size:.85rem;text-decoration:none;text-transform:uppercase;letter-spacing:.04em;}
+.btn-primary{background:var(--orange);color:#1a0e00;}
+.btn-outline{border:1px solid var(--line);color:var(--ink);}
+.btn.magnet{transition:transform .25s ease;}
+.scroll-cue{position:absolute;bottom:2rem;left:6vw;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);z-index:3;display:flex;align-items:center;gap:.6rem;}
+.scroll-cue::after{content:"";width:1px;height:32px;background:linear-gradient(var(--orange),transparent);animation:scdown 1.6s ease infinite;}
+@keyframes scdown{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}50.01%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+
+.marquee-wrap{background:var(--orange);color:#1a0e00;padding:.85rem 0;overflow:hidden;white-space:nowrap;position:relative;z-index:3;transform:rotate(-1deg);margin:-1.2rem 0;}
+.marquee{display:inline-block;animation:mq 24s linear infinite;font-family:'Anton';font-size:1.05rem;letter-spacing:.02em;text-transform:uppercase;}
+.marquee span{margin:0 1.2rem;}
+@keyframes mq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+section{padding:8.5rem 6vw;position:relative;}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.kicker{font-size:.76rem;letter-spacing:.3em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem;}
+h2{font-family:'Anton';text-transform:uppercase;font-size:clamp(2rem,5.2vw,3.6rem);line-height:1;}
+
+/* SOBRE / FACHADA */
+.sobre{background:var(--bg2);}
+.sobre-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;margin-top:3rem;}
+@media(max-width:900px){.sobre-grid{grid-template-columns:1fr;}}
+.sobre p{color:var(--muted);margin-top:1.4rem;line-height:1.75;font-size:1.05rem;max-width:50ch;}
+.fachada-collage{position:relative;height:420px;}
+.fachada-collage img{position:absolute;border-radius:10px;object-fit:cover;box-shadow:0 20px 50px rgba(0,0,0,.5);border:2px solid var(--bg2);}
+.fachada-collage .f1{width:64%;height:78%;top:0;left:0;z-index:2;}
+.fachada-collage .f2{width:52%;height:56%;bottom:0;right:0;z-index:3;}
+@media(max-width:900px){.fachada-collage{height:340px;}}
+.stat-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem;}
+.stat-card{border:1px solid var(--line);border-radius:10px;padding:1.6rem;background:linear-gradient(160deg,rgba(255,255,255,.03),transparent);position:relative;cursor:pointer;}
+.stat-card .num{font-family:'Anton';font-size:2rem;color:var(--orange);}
+.stat-card .lbl{font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:.3rem;}
+
+/* AMBIENTE */
+.ambiente{background:var(--bg);}
+.amb-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:1.4rem;margin-top:3rem;}
+@media(max-width:900px){.amb-grid{grid-template-columns:1fr;}}
+.amb-photo{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);cursor:pointer;}
+.amb-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.16,1,.3,1);}
+.amb-photo:hover img{transform:scale(1.05);}
+.amb-photo.big{aspect-ratio:4/3.1;}
+.amb-photo.small{aspect-ratio:3/4;}
+.amb-photo .pc-label{position:absolute;left:0;right:0;bottom:0;padding:1.3rem;background:linear-gradient(0deg,rgba(0,0,0,.85),transparent);}
+.amb-photo .pc-label h3{font-family:'Anton';text-transform:uppercase;font-size:1.2rem;}
+
+/* GALERIA DINAMICA */
+.galeria{background:var(--bg2);overflow:hidden;}
+.gal-frame{position:relative;margin-top:3rem;border-radius:16px;overflow:hidden;aspect-ratio:16/9;background:#000;border:1px solid var(--line);}
+.gal-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease, transform 6s linear;}
+.gal-slide.active{opacity:1;z-index:2;}
+.gal-slide img,.gal-slide video{width:100%;height:100%;object-fit:cover;display:block;}
+.gal-slide.active img,.gal-slide.active video{animation:kenburns 8s ease forwards;}
+@keyframes kenburns{from{transform:scale(1);}to{transform:scale(1.08);}}
+.gal-caption{position:absolute;left:0;right:0;bottom:0;padding:2rem 2.2rem;background:linear-gradient(0deg,rgba(0,0,0,.88),transparent);z-index:5;}
+.gal-caption .tag{font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--orange);margin-bottom:.4rem;}
+.gal-caption h3{font-family:'Anton';font-size:1.5rem;text-transform:uppercase;}
+.gal-dots{display:flex;gap:.5rem;justify-content:center;margin-top:1.4rem;}
+.gal-dot{width:34px;height:4px;border-radius:4px;background:var(--line);cursor:pointer;transition:background .3s;border:0;}
+.gal-dot.active{background:var(--orange);}
+
+/* AULAS / HORARIOS */
+.aulas{background:var(--bg);}
+.aulas-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;margin-top:3rem;align-items:start;}
+@media(max-width:960px){.aulas-grid{grid-template-columns:1fr;}}
+table.horarios{width:100%;border-collapse:collapse;font-size:.92rem;}
+table.horarios th{text-align:left;color:var(--orange);text-transform:uppercase;font-size:.72rem;letter-spacing:.08em;padding:.8rem .6rem;border-bottom:2px solid var(--orange);}
+table.horarios td{padding:.9rem .6rem;border-bottom:1px solid var(--line);color:var(--ink);}
+table.horarios tr:hover td{background:rgba(255,106,0,.06);}
+.badge-prof{display:inline-block;background:rgba(255,106,0,.14);color:var(--orange2);border-radius:100px;padding:.2rem .7rem;font-size:.76rem;margin-left:.4rem;}
+.equipe-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+.equipe-card{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:3/4;border:1px solid var(--line);cursor:pointer;}
+.equipe-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.16,1,.3,1);}
+.equipe-card:hover img{transform:scale(1.06);}
+.equipe-card .pc-label{position:absolute;left:0;right:0;bottom:0;padding:1rem;background:linear-gradient(0deg,rgba(0,0,0,.9),transparent);}
+.equipe-card .pc-label h3{font-family:'Anton';font-size:1rem;text-transform:uppercase;}
+.equipe-card .pc-label p{font-size:.74rem;color:var(--orange2);margin-top:.1rem;}
+
+/* PACOTES / PRECOS */
+.pacotes{background:var(--bg2);}
+.price-table-wrap{margin-top:3rem;overflow-x:auto;border:1px solid var(--line);border-radius:14px;}
+table.precos{width:100%;border-collapse:collapse;min-width:640px;}
+table.precos th{font-family:'Anton';text-transform:uppercase;font-size:1rem;letter-spacing:.03em;padding:1.1rem 1.4rem;text-align:left;background:rgba(255,106,0,.1);}
+table.precos th.promo{color:var(--orange2);}
+table.precos th.integral{color:var(--muted);}
+table.precos td{padding:1rem 1.4rem;border-top:1px solid var(--line);font-size:.94rem;}
+table.precos td.price{font-family:'Anton';font-size:1.2rem;color:var(--orange);}
+table.precos td.price.integral{color:var(--muted);font-size:1.05rem;}
+.precos-note{margin-top:1.2rem;color:var(--muted);font-size:.88rem;font-style:italic;}
+.destaque-pacote{margin-top:2rem;display:flex;align-items:center;gap:1.6rem;background:linear-gradient(120deg,rgba(255,106,0,.14),transparent);border:1px solid var(--line);border-radius:14px;padding:1.6rem 2rem;flex-wrap:wrap;}
+.destaque-pacote .big-price{font-family:'Anton';font-size:2.6rem;color:var(--orange);}
+.destaque-pacote .big-price small{font-size:1rem;color:var(--muted);}
+
+/* RESULTADOS REAIS */
+.resultados{background:var(--bg);}
+.res-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem;margin-top:3rem;}
+@media(max-width:860px){.res-grid{grid-template-columns:1fr;}}
+.res-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;background:var(--bg2);}
+.res-card img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1);}
+.res-card:hover img{transform:scale(1.04);}
+.res-card .res-text{padding:1.4rem 1.6rem;}
+.res-card .res-text p{color:var(--ink);font-size:.98rem;line-height:1.6;font-style:italic;}
+.res-card .res-text .who{margin-top:.8rem;color:var(--orange2);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;}
+
+.local{background:var(--bg2);}
+.local-info p{color:var(--muted);margin:.5rem 0;font-size:1rem;}
+.local-info b{color:var(--ink);}
+.local-info a{color:var(--orange);}
+
+.cta-final{background:#000;text-align:center;position:relative;overflow:hidden;padding:9.5rem 6vw;}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.32;}
+.blob.b1{width:400px;height:400px;background:var(--orange);top:-100px;left:-100px;animation:float1 9s ease-in-out infinite;}
+.blob.b2{width:300px;height:300px;background:var(--orange2);bottom:-80px;right:-60px;animation:float1 11s ease-in-out infinite reverse;}
+@keyframes float1{0%,100%{transform:translateY(0) translateX(0);}50%{transform:translateY(30px) translateX(20px);}}
+.cta-final h2{position:relative;z-index:2;font-size:clamp(2.2rem,6.6vw,4.6rem);}
+.cta-final p{position:relative;z-index:2;color:var(--muted);max-width:460px;margin:1.4rem auto 2.2rem;}
+.cta-final .btn{position:relative;z-index:2;}
+
+.whatsapp-float{position:fixed;bottom:1.8rem;right:1.8rem;width:60px;height:60px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:200;box-shadow:0 8px 30px rgba(255,106,0,.4);animation:pulse 2.4s ease-in-out infinite;text-decoration:none;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,106,0,.4);}50%{box-shadow:0 0 0 14px rgba(255,106,0,0);}}
+.whatsapp-float svg{width:28px;height:28px;fill:#1a0e00;}
+
+footer{padding:3rem 6vw;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);}
+
+[data-expand]{cursor:pointer;}
+.stat-card[data-expand]::after,.equipe-card[data-expand]::after,.res-card[data-expand]::after,.amb-photo[data-expand]::after{content:"+";position:absolute;top:1rem;right:1.1rem;width:24px;height:24px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;color:var(--orange);transition:transform .35s ease,background .35s ease;pointer-events:none;z-index:6;}
+.stat-card[data-expand]:hover::after,.equipe-card[data-expand]:hover::after,.res-card[data-expand]:hover::after,.amb-photo[data-expand]:hover::after{transform:rotate(90deg);background:rgba(255,106,0,.16);}
+
+.modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.82);opacity:0;visibility:hidden;display:flex;align-items:center;justify-content:center;padding:2rem;transition:opacity .5s ease,visibility .5s ease,backdrop-filter .5s ease;}
+.modal-overlay.open{opacity:1;visibility:visible;backdrop-filter:blur(10px);}
+.modal-box{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:2.6rem;max-width:520px;width:100%;position:relative;transform:scale(.35);opacity:0;transition:transform .6s cubic-bezier(.34,1.56,.64,1),opacity .4s ease;}
+.modal-overlay.open .modal-box{transform:scale(1);opacity:1;}
+.modal-box.has-img{padding:0;overflow:hidden;max-width:560px;}
+.modal-box.has-img img{width:100%;display:block;max-height:65vh;object-fit:cover;}
+.modal-box.has-img .modal-text{padding:2rem;}
+.modal-close{position:absolute;top:.9rem;right:1.1rem;background:rgba(0,0,0,.4);border:0;color:#fff;font-size:1.7rem;cursor:pointer;line-height:1;width:36px;height:36px;border-radius:50%;z-index:2;}
+.modal-close:hover{color:var(--orange);}
+.modal-kicker{font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--orange);margin-bottom:.9rem;}
+.modal-box h3{font-family:'Anton';text-transform:uppercase;font-size:1.6rem;margin-bottom:1rem;}
+.modal-box p{color:var(--muted);line-height:1.7;font-size:1rem;}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;}
+  .reveal{opacity:1;transform:none;}
+  #cdot,#cring,.motif{display:none;}
+  .light-rays,.cloud-veil{display:none;}
+  .hero-video-wrap video{filter:none!important;transform:translate(-50%,-50%) scale(1)!important;}
+  body{cursor:auto;}
+  .gal-slide.active img,.gal-slide.active video{animation:none;}
+}
+</style>
+</head>
+<body>
+
+<div id="preloader"><div class="pl-text">METAFORMA</div><div class="bar"><span></span></div></div>
+<div id="cdot"></div><div id="cring"></div>
+
+<div class="motif" id="motif"><svg viewBox="0 0 24 24"><path d="M2 9h2v6H2zM4 10h1v4H4zM20 9h2v6h-2zM19 10h1v4h-1zM7 11h10v2H7z"/></svg></div>
+
+<header id="header">
+  <div class="logo"><img src="logo-metaforma.png" alt="Logo Metaforma"> META<span>FORMA</span></div>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#galeria">Treinos</a>
+    <a href="#aulas">Aulas</a>
+    <a href="#pacotes">Pacotes</a>
+    <a href="#resultados">Resultados</a>
+    <a class="nav-cta" href="https://instagram.com/studio.metaforma" target="_blank">Instagram</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-video-wrap"><video autoplay muted loop playsinline poster="turma-jump-grupo.jpg"><source src="video-turma-funcional.mp4" type="video/mp4"></video></div>
+  <div class="hero-scrim"></div>
+  <canvas class="particle-canvas" id="heroParticles"></canvas>
+  <div class="light-rays"></div>
+  <div class="cloud-veil" id="cloudVeil"></div>
+  <div class="hero-tag">Funcional · Musculação · Muaythai</div>
+  <h1 class="display">
+    <span class="line"><span>TRANSFORMO</span></span>
+    <span class="line"><span>DISCIPLINA EM RESULTADOS.</span></span>
+  </h1>
+  <p class="hero-sub">Studio Metaforma — treinos eficientes, acompanhamento humanizado e resultados reais. Aqui é mais que treino, é transformação.</p>
+  <div class="hero-ctas">
+    <a class="btn btn-primary magnet" href="#pacotes">Ver pacotes</a>
+    <a class="btn btn-outline magnet" href="#galeria">Ver treinos</a>
+  </div>
+  <div class="scroll-cue">Role a página</div>
+</section>
+
+<div class="marquee-wrap"><div class="marquee">
+  <span>★ TREINOS EFICIENTES</span><span>★ ACOMPANHAMENTO HUMANIZADO</span><span>★ RESULTADOS REAIS</span><span>★ VEM SER SUA MELHOR VERSÃO</span>
+  <span>★ TREINOS EFICIENTES</span><span>★ ACOMPANHAMENTO HUMANIZADO</span><span>★ RESULTADOS REAIS</span><span>★ VEM SER SUA MELHOR VERSÃO</span>
+</div></div>
+
+<section class="sobre" id="sobre">
+  <div class="reveal">
+    <div class="kicker">Sobre a Metaforma</div>
+    <h2 class="display">Aqui é mais que treino.<br>É transformação.</h2>
+  </div>
+  <div class="sobre-grid">
+    <div>
+      <p class="reveal">A Metaforma é feita de pessoas reais com objetivos reais. Um espaço pensado para te oferecer conforto, segurança e os melhores resultados — com equipamentos modernos, profissionais qualificados e motivação todos os dias. Aqui não apenas fazemos exercícios, entregamos resultados.</p>
+      <div class="stat-cards">
+        <div class="stat-card reveal" data-expand data-expand-title="Ambiente amplo e confortável" data-expand-body="Espaço limpo e sempre preparado para você treinar com conforto e segurança, do início ao fim do treino."><div class="num">🏋️</div><div class="lbl">Ambiente acolhedor</div></div>
+        <div class="stat-card reveal" data-expand data-expand-title="Profissionais qualificados" data-expand-body="Equipe de instrutores presente em cada aula — acompanhamento humanizado do primeiro treino em diante."><div class="num">🤝</div><div class="lbl">Profissionais qualificados</div></div>
+      </div>
+    </div>
+    <div class="fachada-collage reveal">
+      <img class="f1" src="fachada-noite.jpg" alt="Fachada da Metaforma à noite, iluminação laranja">
+      <img class="f2" src="fachada-dia.jpg" alt="Fachada da Metaforma durante o dia">
+    </div>
+  </div>
+</section>
+
+<section class="ambiente">
+  <div class="reveal">
+    <div class="kicker">Nossa estrutura</div>
+    <h2 class="display">Um ambiente feito<br>para transformar você.</h2>
+  </div>
+  <div class="amb-grid">
+    <div class="amb-photo big reveal" data-expand data-expand-title="Equipamentos modernos" data-expand-body="Tecnologia e qualidade para potencializar seus treinos — estações completas de musculação, com identidade visual própria em laranja e preto." data-expand-img="interior-equipamentos.jpg">
+      <img src="interior-equipamentos.jpg" alt="Área de musculação da Metaforma com equipamentos modernos" loading="lazy">
+      <div class="pc-label"><h3>Musculação</h3></div>
+    </div>
+    <div class="amb-photo small reveal" data-expand data-expand-title="Espaço amplo" data-expand-body="Ambiente amplo e confortável, com piso emborrachado e estrutura pensada para treinos funcionais e coletivos." data-expand-img="interior-ambiente.jpg">
+      <img src="interior-ambiente.jpg" alt="Vista ampla do interior da Metaforma" loading="lazy">
+      <div class="pc-label"><h3>Espaço Funcional</h3></div>
+    </div>
+  </div>
+</section>
+
+<section class="galeria" id="galeria">
+  <div class="reveal">
+    <div class="kicker">Direto dos treinos</div>
+    <h2 class="display">Quem treina aqui,<br>vive isso todos os dias.</h2>
+  </div>
+  <div class="gal-frame reveal" id="galFrame">
+    <div class="gal-slide active" data-type="video" data-src="video-turma-funcional.mp4">
+      <video muted loop playsinline autoplay><source src="video-turma-funcional.mp4" type="video/mp4"></video>
+      <div class="gal-caption"><div class="tag">Na academia</div><h3>Aula funcional em grupo</h3></div>
+    </div>
+    <div class="gal-slide" data-type="video" data-src="video-aula-jump.mp4">
+      <video muted loop playsinline><source src="video-aula-jump.mp4" type="video/mp4"></video>
+      <div class="gal-caption"><div class="tag">Aula coletiva</div><h3>Jump — energia em cada salto</h3></div>
+    </div>
+    <div class="gal-slide" data-type="img" data-src="corrida-rua.jpg">
+      <img src="corrida-rua.jpg" alt="Alunos correndo em grupo pelas ruas">
+      <div class="gal-caption"><div class="tag">Fora da academia</div><h3>Corrida em grupo pelas ruas</h3></div>
+    </div>
+    <div class="gal-slide" data-type="img" data-src="turma-jump-grupo.jpg">
+      <img src="turma-jump-grupo.jpg" alt="Turma completa de alunos da Metaforma">
+      <div class="gal-caption"><div class="tag">Comunidade</div><h3>A Metaforma é feita de pessoas reais</h3></div>
+    </div>
+    <div class="gal-slide" data-type="img" data-src="prof-fernanda-acao.jpg">
+      <img src="prof-fernanda-acao.jpg" alt="Instrutora da Metaforma em ação">
+      <div class="gal-caption"><div class="tag">Energia todos os dias</div><h3>Motivação em cada treino</h3></div>
+    </div>
+  </div>
+  <div class="gal-dots" id="galDots"></div>
+</section>
+
+<section class="aulas" id="aulas">
+  <div class="reveal">
+    <div class="kicker">Horários</div>
+    <h2 class="display">Escolha seu dia.<br>Supere seus limites.</h2>
+  </div>
+  <div class="aulas-grid">
+    <div class="reveal">
+      <table class="horarios">
+        <thead><tr><th>Dia</th><th>Aula</th><th>Horário</th></tr></thead>
+        <tbody>
+          <tr><td>Segunda</td><td>Dança <span class="badge-prof">Prof. Chileno</span></td><td>18h</td></tr>
+          <tr><td>Terça</td><td>HIIT</td><td>6h</td></tr>
+          <tr><td>Terça</td><td>Jump <span class="badge-prof">Prof. Felipe</span></td><td>17h</td></tr>
+          <tr><td>Quarta</td><td>HIIT</td><td>18h</td></tr>
+          <tr><td>Quinta</td><td>Dança <span class="badge-prof">Prof. Chileno</span></td><td>6h</td></tr>
+          <tr><td>Quinta</td><td>Jump <span class="badge-prof">Fernanda Pinheiro</span></td><td>18h</td></tr>
+          <tr><td>Sábado</td><td>Circuitão Funcional <span class="badge-prof">Prof. Silvana</span></td><td>6h</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:1.4rem;color:var(--muted);font-size:.9rem;">Consulte também o <b style="color:var(--ink)">Pacote Funcional 6hs</b>: Segunda (Funcional), Terça (HIIT), Quarta (Circuito), Quinta (Dança), Sexta (Crosstraining) e Sábado (Circuito) — todos às 6h.</p>
+    </div>
+    <div class="equipe-grid">
+      <div class="equipe-card reveal" data-expand data-expand-title="Prof. Chileno" data-expand-body="Comanda a aula de Dança nas segundas às 18h e quintas às 6h. Energia, ritmo e movimento em cada aula." data-expand-img="prof-chileno-danca.jpg">
+        <img src="prof-chileno-danca.jpg" alt="Prof. Chileno, instrutor de dança da Metaforma" loading="lazy">
+        <div class="pc-label"><h3>Prof. Chileno</h3><p>Dança</p></div>
+      </div>
+      <div class="equipe-card reveal" data-expand data-expand-title="Prof. Felipe" data-expand-body="Comanda a aula de Jump às terças 17h. Mais energia, mais disposição, mais você." data-expand-img="prof-felipe-jump.jpg">
+        <img src="prof-felipe-jump.jpg" alt="Prof. Felipe, instrutor de jump da Metaforma" loading="lazy">
+        <div class="pc-label"><h3>Prof. Felipe</h3><p>Jump · Terças</p></div>
+      </div>
+      <div class="equipe-card reveal" data-expand data-expand-title="Fernanda Pinheiro" data-expand-body="Comanda a aula de Jump às quintas 18h — mente forte, corpo forte." data-expand-img="prof-fernanda-pinheiro-jump.jpg">
+        <img src="prof-fernanda-pinheiro-jump.jpg" alt="Fernanda Pinheiro, instrutora de jump da Metaforma" loading="lazy">
+        <div class="pc-label"><h3>Fernanda Pinheiro</h3><p>Jump · Quintas</p></div>
+      </div>
+      <div class="equipe-card reveal" data-expand data-expand-title="Prof. Silvana" data-expand-body="Comanda o Circuitão Funcional todos os sábados às 6h — treino que desafia, resultados que motivam." data-expand-img="prof-silvana-circuitao.jpg">
+        <img src="prof-silvana-circuitao.jpg" alt="Prof. Silvana, instrutora do circuitão funcional" loading="lazy">
+        <div class="pc-label"><h3>Prof. Silvana</h3><p>Circuitão · Sábados</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pacotes" id="pacotes">
+  <div class="reveal">
+    <div class="kicker">Pacotes</div>
+    <h2 class="display">Conheça nossos<br>pacotes.</h2>
+  </div>
+  <div class="price-table-wrap reveal">
+    <table class="precos">
+      <thead><tr><th>Plano</th><th class="promo">Promocional</th><th class="integral">Integral*</th></tr></thead>
+      <tbody>
+        <tr><td>Musculação sem aula extra</td><td class="price">R$ 100</td><td class="price integral">R$ 118</td></tr>
+        <tr><td>Musculação com aula extra</td><td class="price">R$ 110</td><td class="price integral">R$ 128</td></tr>
+        <tr><td>Treinamento Funcional</td><td class="price">R$ 110</td><td class="price integral">R$ 128</td></tr>
+        <tr><td>Muaythai com aula extra <span style="color:var(--muted);font-size:.82rem;">(sem aula extra R$110/R$128)</span></td><td class="price">R$ 120</td><td class="price integral">R$ 138</td></tr>
+        <tr><td>Musculação + T. Funcional (misto)</td><td class="price">R$ 130</td><td class="price integral">R$ 148</td></tr>
+        <tr><td>Musculação + Muaythai</td><td class="price">R$ 150</td><td class="price integral">R$ 168</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="precos-note reveal">*Integral: pagamento após 3 dias de atraso. Consulte as aulas extras que você tem direito de fazer.</p>
+  <div class="destaque-pacote reveal">
+    <div class="big-price">R$ 110<small>/mês</small></div>
+    <div>
+      <h3 class="display" style="font-size:1.3rem;">Pacote Funcional 6hs</h3>
+      <p style="color:var(--muted);font-size:.9rem;">Segunda a sábado, sempre às 6h — funcional, HIIT, circuito, dança e crosstraining. Escolha seu dia, supere seus limites.</p>
+    </div>
+  </div>
+</section>
+
+<section class="resultados" id="resultados">
+  <div class="reveal">
+    <div class="kicker">Resultados reais</div>
+    <h2 class="display">A Metaforma é feita de<br>pessoas reais.</h2>
+  </div>
+  <div class="res-grid">
+    <div class="res-card reveal" data-expand data-expand-title="7 semanas de transformação" data-expand-body="&quot;7 semanas que ela resolveu mudar! Ela chegou com o objetivo de perder 10 kg...&quot; — depoimento real publicado pela Metaforma no Instagram (@fnanda.personal), com 3 mil visualizações." data-expand-img="resultado-real-1.jpg">
+      <img src="resultado-real-1.jpg" alt="Resultado real de aluna da Metaforma, antes e depois" loading="lazy">
+      <div class="res-text"><p>"7 semanas que ela resolveu mudar! Ela chegou com o objetivo de perder 10 kg..."</p><div class="who">Depoimento real — Instagram @fnanda.personal</div></div>
+    </div>
+    <div class="res-card reveal" data-expand data-expand-title="E quando menos esperar..." data-expand-body="Mais uma transformação real de aluna da Metaforma — resultado de disciplina e constância no treino." data-expand-img="resultado-real-2.jpg">
+      <img src="resultado-real-2.jpg" alt="Resultado real de aluna da Metaforma na praia" loading="lazy">
+      <div class="res-text"><p>"E quando menos esperar..."</p><div class="who">Depoimento real — Instagram @fnanda.personal</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="local" id="local">
+  <div class="reveal">
+    <div class="kicker">Onde estamos</div>
+    <h2 class="display">Studio Metaforma.</h2>
+  </div>
+  <div class="local-info reveal" style="margin-top:2rem;">
+    <p><b>Endereço:</b> em atualização — siga a Metaforma no Instagram para localização e novidades.</p>
+    <p><b>Instagram:</b> <a href="https://instagram.com/studio.metaforma" target="_blank">@studio.metaforma</a></p>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <canvas class="particle-canvas" id="ctaParticles"></canvas>
+  <h2 class="display reveal">Vem ser sua<br>melhor versão!</h2>
+  <p class="reveal">Disciplina hoje, conquistas amanhã. Siga a Metaforma e comece sua transformação.</p>
+  <a class="btn btn-primary magnet reveal" href="https://instagram.com/studio.metaforma" target="_blank">Seguir no Instagram</a>
+</section>
+
+<a class="whatsapp-float" href="https://instagram.com/studio.metaforma" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.97.24 2.43.4a4.9 4.9 0 0 1 1.77 1.15 4.9 4.9 0 0 1 1.15 1.77c.16.46.35 1.26.4 2.43.07 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.05 1.17-.24 1.97-.4 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.46.16-1.26.35-2.43.4-1.25.07-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.97-.24-2.43-.4a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.16-.46-.35-1.26-.4-2.43C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.24-1.97.4-2.43A4.9 4.9 0 0 1 3.82 3.8a4.9 4.9 0 0 1 1.77-1.15c.46-.16 1.26-.35 2.43-.4C9.27 2.2 9.67 2.2 12 2.2zm0 3.15a6.65 6.65 0 1 0 0 13.3 6.65 6.65 0 0 0 0-13.3zm0 10.97a4.32 4.32 0 1 1 0-8.64 4.32 4.32 0 0 1 0 8.64zm6.9-11.24a1.55 1.55 0 1 1-3.1 0 1.55 1.55 0 0 1 3.1 0z"/></svg></a>
+
+<footer>Studio Metaforma — Funcional &amp; Musculação · Site desenvolvido por sitePersonalizado</footer>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" aria-label="Fechar">&times;</button>
+    <div id="modalImgWrap"></div>
+    <div class="modal-text">
+      <div class="modal-kicker">Saiba mais</div>
+      <h3 id="modalTitle"></h3>
+      <p id="modalBody"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    document.getElementById('preloader').classList.add('done');
+    const heroEl=document.querySelector('.hero');
+    const veil=document.getElementById('cloudVeil');
+    requestAnimationFrame(()=>{
+      heroEl.classList.add('arrived');
+      if(veil) veil.classList.add('lift');
+    });
+  },900);
+});
+
+if(!reduced){
+  const dot=document.getElementById('cdot'), ring=document.getElementById('cring');
+  let mx=0,my=0,rx=0,ry=0;
+  window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+  function loop(){rx+=(mx-rx)*.15;ry+=(my-ry)*.15;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);}
+  loop();
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{ring.style.width='54px';ring.style.height='54px';ring.style.borderColor='#ff6a00';});
+    el.addEventListener('mouseleave',()=>{ring.style.width='34px';ring.style.height='34px';ring.style.borderColor='rgba(255,106,0,.5)';});
+  });
+}
+
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>{
+  header.classList.toggle('scrolled', window.scrollY>40);
+  updateMotif();
+});
+
+const motif=document.getElementById('motif');
+const waypoints={sobre:[85,25,10,1],ambiente:[6,55,-14,1.2],galeria:[88,40,16,1],aulas:[8,60,0,1],pacotes:[85,35,20,1],resultados:[8,45,-8,1],local:[85,70,10,.9],'cta-final':[50,50,20,1.6]};
+function updateMotif(){
+  if(reduced) return;
+  const vh=window.innerHeight;
+  let current=null;
+  Object.keys(waypoints).forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el) return;
+    const r=el.getBoundingClientRect();
+    if(r.top < vh*0.6 && r.bottom > vh*0.3) current=id;
+  });
+  if(current){
+    const [x,y,rot,sc]=waypoints[current];
+    motif.style.transform=`translate(${x}vw,${y}vh) rotate(${rot}deg) scale(${sc})`;
+  }
+}
+
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{ if(en.isIntersecting) en.target.classList.add('in'); });
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* Galeria dinamica - fotos e videos passando suavemente */
+(function(){
+  const slides=Array.from(document.querySelectorAll('.gal-slide'));
+  const dotsWrap=document.getElementById('galDots');
+  let current=0, timer=null;
+  slides.forEach((s,i)=>{
+    const dot=document.createElement('button');
+    dot.className='gal-dot'+(i===0?' active':'');
+    dot.addEventListener('click',()=>goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+  const dots=Array.from(dotsWrap.children);
+  function goTo(i){
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    const vid=slides[current].querySelector('video');
+    if(vid) vid.pause();
+    current=i;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    const newVid=slides[current].querySelector('video');
+    if(newVid){ newVid.currentTime=0; newVid.play().catch(()=>{}); }
+    resetTimer();
+  }
+  function next(){ goTo((current+1)%slides.length); }
+  function resetTimer(){
+    if(timer) clearTimeout(timer);
+    if(!reduced) timer=setTimeout(next, 6000);
+  }
+  if(!reduced){
+    resetTimer();
+    new IntersectionObserver(entries=>{
+      entries.forEach(en=>{
+        if(!en.isIntersecting && timer){ clearTimeout(timer); timer=null; }
+        else if(en.isIntersecting && !timer){ resetTimer(); }
+      });
+    },{threshold:.2}).observe(document.getElementById('galFrame'));
+  }
+})();
+
+function initParticleCloud(canvasId, drawShape, opts){
+  const canvas=document.getElementById(canvasId);
+  if(!canvas) return;
+  const ctx=canvas.getContext('2d');
+  let W,H,DPR;
+  function resize(){
+    const rect=canvas.parentElement.getBoundingClientRect();
+    DPR=Math.min(window.devicePixelRatio||1,1.5);
+    W=rect.width; H=rect.height;
+    canvas.width=W*DPR; canvas.height=H*DPR;
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+  }
+  resize();
+  window.addEventListener('resize',resize);
+
+  const maskSize=200;
+  const off=document.createElement('canvas');
+  off.width=maskSize; off.height=maskSize;
+  const octx=off.getContext('2d');
+  octx.fillStyle='#fff'; octx.strokeStyle='#fff';
+  drawShape(octx,maskSize);
+  const imgData=octx.getImageData(0,0,maskSize,maskSize).data;
+
+  const points=[];
+  const stride=opts.stride||3.2;
+  for(let y=0;y<maskSize;y+=stride){
+    for(let x=0;x<maskSize;x+=stride){
+      const idx=(Math.round(y)*maskSize+Math.round(x))*4+3;
+      if(imgData[idx]>120){
+        points.push({
+          tx:(x-maskSize/2), ty:(y-maskSize/2),
+          x:(Math.random()-0.5)*(opts.spread||700),
+          y:(Math.random()-0.5)*(opts.spread||700),
+          r:Math.random()*1.7+0.7,
+          phase:Math.random()*Math.PI*2,
+          speed:0.4+Math.random()*0.6
+        });
+      }
+    }
+  }
+
+  let angle=0, t=0, raf=null, running=false;
+  function draw(animated){
+    ctx.clearRect(0,0,W,H);
+    const cx=W*opts.cx, cy=H*opts.cy, scale=opts.scale;
+    ctx.fillStyle=opts.color; ctx.globalAlpha=opts.alpha;
+    points.forEach(p=>{
+      let px,py;
+      if(animated){
+        const rx=p.tx*Math.cos(angle)-p.ty*Math.sin(angle);
+        const ry=p.tx*Math.sin(angle)+p.ty*Math.cos(angle);
+        p.x += (rx-p.x)*0.05; p.y += (ry-p.y)*0.05;
+        const jx=Math.sin(t*p.speed+p.phase)*1.6, jy=Math.cos(t*p.speed+p.phase)*1.6;
+        px=cx+(p.x+jx)*scale; py=cy+(p.y+jy)*scale;
+      } else { px=cx+p.tx*scale; py=cy+p.ty*scale; }
+      ctx.beginPath(); ctx.arc(px,py,p.r*scale,0,Math.PI*2); ctx.fill();
+    });
+    ctx.globalAlpha=1;
+  }
+  function frame(){ t+=0.008; angle+=0.0009; draw(true); raf=requestAnimationFrame(frame); }
+  function start(){ if(!running){ running=true; raf=requestAnimationFrame(frame); } }
+  function stop(){ running=false; if(raf) cancelAnimationFrame(raf); raf=null; }
+
+  if(reduced){ draw(false); }
+  else {
+    new IntersectionObserver(entries=>{
+      entries.forEach(en=>{ en.isIntersecting ? start() : stop(); });
+    },{threshold:0}).observe(canvas.parentElement);
+  }
+}
+
+function drawDumbbell(ctx,size){
+  const cx=size/2, cy=size/2;
+  ctx.save(); ctx.translate(cx,cy); ctx.rotate(-0.5);
+  ctx.fillRect(-70,-8,140,16);
+  ctx.beginPath(); ctx.arc(-70,0,26,0,Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(70,0,26,0,Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(-70,0,14,0,Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(70,0,14,0,Math.PI*2); ctx.fill();
+  ctx.restore();
+}
+
+initParticleCloud('heroParticles', drawDumbbell, {cx:.8,cy:.3,scale:1.1,color:'#ff6a00',alpha:.5,spread:650});
+initParticleCloud('ctaParticles', drawDumbbell, {cx:.5,cy:.5,scale:1.1,color:'#ff6a00',alpha:.4,spread:600});
+
+document.querySelectorAll('.magnet').forEach(btn=>{
+  btn.addEventListener('mousemove',e=>{
+    const r=btn.getBoundingClientRect();
+    const x=e.clientX-r.left-r.width/2, y=e.clientY-r.top-r.height/2;
+    btn.style.transform=`translate(${x*0.25}px,${y*0.5}px)`;
+  });
+  btn.addEventListener('mouseleave',()=>{btn.style.transform='translate(0,0)';});
+});
+
+(function(){
+  const overlay=document.getElementById('modalOverlay');
+  const box=document.getElementById('modalBox');
+  const titleEl=document.getElementById('modalTitle');
+  const bodyEl=document.getElementById('modalBody');
+  const imgWrap=document.getElementById('modalImgWrap');
+  function openModal(el){
+    titleEl.textContent=el.dataset.expandTitle||'';
+    bodyEl.textContent=el.dataset.expandBody||'';
+    const img=el.dataset.expandImg;
+    if(img){
+      imgWrap.innerHTML='<img src="'+img+'" alt="">';
+      box.classList.add('has-img');
+    } else {
+      imgWrap.innerHTML='';
+      box.classList.remove('has-img');
+    }
+    const r=el.getBoundingClientRect();
+    const ox=((r.left+r.width/2)/window.innerWidth*100).toFixed(1);
+    const oy=((r.top+r.height/2)/window.innerHeight*100).toFixed(1);
+    box.style.transformOrigin=ox+'% '+oy+'%';
+    overlay.classList.add('open');
+  }
+  function closeModal(){ overlay.classList.remove('open'); }
+  document.querySelectorAll('[data-expand]').forEach(el=>{
+    el.addEventListener('click',()=>openModal(el));
+  });
+  overlay.addEventListener('click',e=>{ if(e.target===overlay) closeModal(); });
+  overlay.querySelector('.modal-close').addEventListener('click',closeModal);
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+})();
+</script>
+</body>
+</html>
