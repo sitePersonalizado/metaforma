@@ -147,6 +147,9 @@ h2{font-family:'Anton';text-transform:uppercase;font-size:clamp(2rem,5.2vw,3.6re
 .amb-photo:hover img{transform:scale(1.05);}
 .amb-photo.big{aspect-ratio:4/3.1;}
 .amb-photo.small{aspect-ratio:3/4;}
+.amb-side{display:flex;flex-direction:column;gap:1.4rem;height:100%;}
+.amb-side .amb-photo.small{aspect-ratio:auto;flex:1;}
+@media(max-width:900px){.amb-side{height:auto;}.amb-side .amb-photo.small{aspect-ratio:3/4;flex:none;}}
 .amb-photo .pc-label{position:absolute;left:0;right:0;bottom:0;padding:1.3rem;background:linear-gradient(0deg,rgba(0,0,0,.85),transparent);}
 .amb-photo .pc-label h3{font-family:'Anton';text-transform:uppercase;font-size:1.2rem;}
 
@@ -340,9 +343,15 @@ footer{padding:3rem 6vw;text-align:center;color:var(--muted);font-size:.85rem;bo
       <img decoding="async" src="interior-musculacao.jpg" alt="Área de musculação da Metaforma com equipamentos modernos" loading="lazy">
       <div class="pc-label"><h3>Musculação</h3></div>
     </div>
-    <div class="amb-photo small reveal" data-expand data-expand-title="Funcional" data-expand-body="Espaço dedicado ao treinamento funcional — cordas navais, plataformas, kettlebells e muito mais para treinos dinâmicos em grupo." data-expand-img="interior-funcional.jpg">
-      <img decoding="async" src="interior-funcional.jpg" alt="Área de treinamento funcional da Metaforma" loading="lazy">
-      <div class="pc-label"><h3>Funcional</h3></div>
+    <div class="amb-side">
+      <div class="amb-photo small reveal" data-expand data-expand-title="Funcional" data-expand-body="Espaço dedicado ao treinamento funcional — cordas navais, plataformas, kettlebells e muito mais para treinos dinâmicos em grupo." data-expand-img="interior-funcional.jpg">
+        <img decoding="async" src="interior-funcional.jpg" alt="Área de treinamento funcional da Metaforma" loading="lazy">
+        <div class="pc-label"><h3>Funcional</h3></div>
+      </div>
+      <div class="amb-photo small reveal" data-expand data-expand-title="Musculação" data-expand-body="Mais um ângulo da nossa área de musculação — equipamentos completos para todos os grupos musculares." data-expand-img="interior-musculacao-extra.jpg">
+        <img decoding="async" src="interior-musculacao-extra.jpg" alt="Outro ângulo da área de musculação da Metaforma" loading="lazy">
+        <div class="pc-label"><h3>Musculação</h3></div>
+      </div>
     </div>
   </div>
 </section>
