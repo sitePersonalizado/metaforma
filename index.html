@@ -219,6 +219,25 @@ table.precos td.price.integral{color:var(--muted);font-size:1.05rem;}
 .res-card .res-text p{color:var(--ink);font-size:.98rem;line-height:1.6;font-style:italic;}
 .res-card .res-text .who{margin-top:.8rem;color:var(--orange2);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;}
 
+/* AVALIAÇÕES GOOGLE */
+.avaliacoes{background:var(--bg);overflow:hidden;}
+.av-summary{display:flex;align-items:center;gap:.7rem;margin-top:1.1rem;flex-wrap:wrap;}
+.av-summary .av-stars{color:var(--orange);letter-spacing:.12em;font-size:1rem;}
+.av-summary .av-score{font-family:'Anton';color:var(--orange2);font-size:1.15rem;}
+.av-summary .av-count{color:var(--muted);font-size:.92rem;}
+.av-track{margin-top:3.2rem;display:flex;flex-direction:column;gap:1.3rem;}
+.av-row-wrap{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);}
+.av-row{display:flex;width:max-content;gap:1.2rem;animation:avscroll 90s linear infinite;}
+.av-row.rev{animation-direction:reverse;animation-duration:100s;}
+.av-row-wrap:hover .av-row{animation-play-state:paused;}
+@keyframes avscroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.av-card{flex:none;width:300px;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:1.5rem;cursor:default;}
+.av-card .av-card-stars{color:var(--orange);font-size:.82rem;letter-spacing:.15em;margin-bottom:.75rem;}
+.av-card p{font-size:.9rem;line-height:1.55;color:var(--ink);}
+.av-card .av-author{margin-top:1.1rem;padding-top:.9rem;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:.6rem;}
+.av-card .av-author strong{font-family:'Anton';font-size:.78rem;text-transform:uppercase;letter-spacing:.02em;font-weight:400;}
+.av-card .av-author span{font-size:.64rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;white-space:nowrap;}
+
 .local{background:var(--bg2);}
 .local-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;}
 @media(max-width:860px){.local-grid{grid-template-columns:1fr;}}
@@ -467,6 +486,68 @@ footer{padding:3rem 6vw;text-align:center;color:var(--muted);font-size:.85rem;bo
   </div>
 </section>
 
+<section class="avaliacoes" id="avaliacoes">
+  <div class="reveal">
+    <div class="kicker">Avaliações reais</div>
+    <h2 class="display">O que dizem<br>sobre a gente.</h2>
+    <div class="av-summary">
+      <span class="av-stars">★★★★★</span>
+      <span class="av-score">4,8</span>
+      <span class="av-count">· 40 avaliações no Google</span>
+    </div>
+  </div>
+  <div class="av-track reveal">
+    <div class="av-row-wrap">
+      <div class="av-row" id="avRow1">
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Já malhei em algumas academias, e não tive um acompanhamento como tenho tido na METAFORMA, excelentes professores, e por ser horário marcado o ambiente não fica lotado, nota mil na organização, quem quer resultado tem que ir malhar lá."</p><div class="av-author"><strong>Jandira Pinheiro</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Excelente... Já conheço o trabalho da Personal Fernanda Pinheiro há alguns anos... Fiz Funcional por quase dois anos, mas tenho algumas limitações."</p><div class="av-author"><strong>Andréa Monteiro da Silva</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Metaforma Funcional e Musculação é um dos melhores centros de treinamento em Itabuna, já treinei em vários outros locais, mas igual à Metaforma não tem."</p><div class="av-author"><strong>Anny Vianna</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"A Metaforma Funcional & Musculação é o espaço ideal para quem quer entrar em forma com ritmo! Localizada no coração do bairro Santo Antônio, surpreende ao oferecer diversos serviços de academia."</p><div class="av-author"><strong>Vitor Luiz Silva de Oliveira</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Qualidade de vida é ter uma alimentação saudável e praticar exercícios físicos. Eu, Rosane, encontrei na Metaforma tudo que precisava: acompanhamento e orientação."</p><div class="av-author"><strong>Rosane Silva</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Local onde realizo meus treinos. Possui aparelhos em excelente estado de conservação e bem higienizados. Professores bem atenciosos. Direção excelente."</p><div class="av-author"><strong>Anderson Paulista</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Comecei faz pouco tempo mas já gostei muito da Metaforma e da personal trainer Fernanda, além de profissional ela é muito atenciosa, e já estou vendo resultado em menos de um mês 👏"</p><div class="av-author"><strong>Ana Paula Santos</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Excelente! Atenção, orientação, localização, organização, equipamentos novos, higiene do local é perfeita. Só falta o ar condicionado 😀"</p><div class="av-author"><strong>Valeria Morais</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Local muito bom pra malhar, só sinto falta de armários individuais — tem apenas um armário onde ficam os pertences de todos."</p><div class="av-author"><strong>Flaviane S. Xavier</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Local incrível, profissional excelente. Procurei pela saúde e cada dia tem uma aula diferente, o que torna prazeroso cuidar do corpo."</p><div class="av-author"><strong>Gel Lavinscky</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Super recomendo, top demais. Minha selva de todos os dias com a melhor... Fernanda Pinheiro. Venha fazer parte você também. Metaforma. ❤️"</p><div class="av-author"><strong>Marileide Lima</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Nunca tinha praticado exercícios físicos, estou gostando muito do profissionalismo da Fernanda Pinheiro, ela arrasa, show de bola."</p><div class="av-author"><strong>Leya Ribeiro</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Excelência no que faz! Ótima profissional, nos faz acreditar no nosso potencial. Faço questão de indicar onde chego, pela boa qualidade em todos os aspectos."</p><div class="av-author"><strong>Camila Alves</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Ótima academia, sensacional, me sinto muito bem malhando na Metaforma, o profissionalismo é de boa qualidade, venha você também."</p><div class="av-author"><strong>Solange F. de Jesus</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Maravilhosa, espaço perfeito, profissionais maravilhosos... Não decepciona nunca. Espaço incrível, super indico."</p><div class="av-author"><strong>Maryana Alves</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Ambiente agradável, profissionais sempre à disposição para esclarecer nossas dúvidas, ótima localização."</p><div class="av-author"><strong>Cristiane Costa</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Ótima, estou amando fazer parte da Metaforma, está sendo uma experiência incrível e minha personal é a melhor 🤩"</p><div class="av-author"><strong>Mariana Oliveira</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Academia equipada com ótimos aparelhos, profissionais empenhados pra te ajudar a conseguir seus objetivos."</p><div class="av-author"><strong>Solon Santos Cruz</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Muito bom o espaço, Fernanda é uma profissional de qualidade. Super recomendo."</p><div class="av-author"><strong>Patrícia Pinheiro</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Amo esse lugar. Perfeito o trabalho desenvolvido por esta profissional. ❤️"</p><div class="av-author"><strong>Ana Cristina Firmino</strong><span>Google</span></div></div>
+      </div>
+    </div>
+    <div class="av-row-wrap">
+      <div class="av-row rev" id="avRow2">
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"A melhor experiência que eu já tive em minha vida, o resultado é real."</p><div class="av-author"><strong>Maria Talita</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Atendimento diferenciado, a melhor personal de Itabuna, lá você vê resultados."</p><div class="av-author"><strong>Camila Ferreira</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Gostei muito, organizada e completa."</p><div class="av-author"><strong>Ícaro Silva</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Realizada! Responsabilidade e profissionalismo. Super recomendo."</p><div class="av-author"><strong>Vivia Maciel</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Ótima academia, a personal é dedicada."</p><div class="av-author"><strong>Fabrício Cruz</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Experiência muito boa, uma família."</p><div class="av-author"><strong>Roberto José Soares</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Excelente! A melhor que tem!"</p><div class="av-author"><strong>Mayne Janaína</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Ótima academia, ótima localização."</p><div class="av-author"><strong>Dani Requião Pinheiro</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Excelente, bons profissionais."</p><div class="av-author"><strong>Eddie R.</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Qualidade, limpeza, organização 👍"</p><div class="av-author"><strong>Suzana Roberta</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Está sendo maravilhoso."</p><div class="av-author"><strong>Angelica Souza</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Excelente academia!!"</p><div class="av-author"><strong>Edna Ramos</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Ótima!!"</p><div class="av-author"><strong>Sérgio dos Santos Bastos</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Ótimo e recomendado."</p><div class="av-author"><strong>Jeferson Silva</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Excelente! 👏"</p><div class="av-author"><strong>Anderson Rodrigues</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Qualidade, profissionalismo."</p><div class="av-author"><strong>Anna Júlya</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Comunicação, qualidade, profissionalismo."</p><div class="av-author"><strong>Meire Marry</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Comunicação, qualidade, profissionalismo."</p><div class="av-author"><strong>Silvana Ferreira</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Comunicação, qualidade, profissionalismo."</p><div class="av-author"><strong>Marcela Ferreira Caldas</strong><span>Google</span></div></div>
+        <div class="av-card"><div class="av-card-stars">★★★★★</div><p>"Comunicação, qualidade, profissionalismo."</p><div class="av-author"><strong>Fátima Santos</strong><span>Google</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="local" id="local">
   <div class="reveal">
     <div class="kicker">Onde estamos</div>
@@ -569,6 +650,11 @@ const io=new IntersectionObserver((entries)=>{
   entries.forEach(en=>{ if(en.isIntersecting) en.target.classList.add('in'); });
 },{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+['avRow1','avRow2'].forEach(id=>{
+  const row=document.getElementById(id);
+  if(row) row.insertAdjacentHTML('beforeend', row.innerHTML);
+});
 
 /* Galeria dinamica - fotos e videos passando suavemente */
 (function(){
